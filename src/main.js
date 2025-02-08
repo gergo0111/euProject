@@ -1,17 +1,15 @@
-// Példa mapping, ha nincs data-country attribútum az SVG-ben
-const idToCountry = {
-  'path7009': 'FR'
-  // További mapping: 'másikId': 'országkód'
-};
+// Előre definiált tömb a path elemek sorrendjének megfelelően.
+// Fontos: ezt a tömböt neked kell pontosan úgy összeállítani, hogy az SVG-ben a path-ok sorrendje megfeleljen a tömb elemeinek.
+const countryOrder = ['FI', 'SE', 'IT', 'ES']; // stb. – add meg a megfelelő országkódokat az SVG-ben szereplő sorrend szerint
 
 // Példa ország adatok
 const countryData = {
-  FR: {
-    name: 'Franciaország',
+  FI: {
+    name: 'Finnország',
     info: 'Franciaország fővárosa Párizs, híres a kultúrájáról és gasztronómiájáról.'
   },
-  DE: {
-    name: 'Németország',
+  SE: {
+    name: 'Svédország',
     info: 'Németország fővárosa Berlin, jelentős gazdasági és ipari központ.'
   },
   IT: {
@@ -22,7 +20,7 @@ const countryData = {
     name: 'Spanyolország',
     info: 'Spanyolország fővárosa Madrid, gazdag történelemmel és kultúrával rendelkezik.'
   }
-  // További országok...
+  // További országok adatai, ha szükséges...
 };
 
 const infoCard = document.getElementById('info-card');
@@ -31,7 +29,7 @@ const countryInfoEl = document.getElementById('country-info');
 const closeCardBtn = document.getElementById('close-card');
 const svgObject = document.getElementById('europe-svg');
 
-// Kártya bezárása
+// Az információs kártya bezárása
 closeCardBtn.addEventListener('click', () => {
   infoCard.style.display = 'none';
 });
@@ -54,44 +52,42 @@ svgObject.addEventListener('load', () => {
     console.error('Nem sikerült betölteni az SVG dokumentumot.');
     return;
   }
-
-  // Az összes <path> elem lekérése
+  
+  // Lekérjük az összes <path> elemet – feltételezzük, hogy ezek az interaktív országok
   const pathElements = svgDoc.querySelectorAll('path');
-  pathElements.forEach((elem) => {
-    // Biztosítjuk, hogy az elem reagáljon a pointer eseményekre
+  
+  // Végigiterálunk a path elemek sorrendjén, és a countryOrder tömb alapján hozzárendeljük az eseményeket
+  pathElements.forEach((elem, index) => {
+    // Csak akkor dolgozunk vele, ha van megfelelő országkód (tehát a countryOrder tömbben van ilyen index)
+    const countryCode = countryOrder[index];
+    if (!countryCode) {
+      return; // ha nincs hozzárendelve ország, kihagyjuk az elemet
+    }
+    
+    // Biztosítjuk, hogy az elem reagáljon a pointer eseményekre, és a kurzor mutató legyen
     elem.style.pointerEvents = 'all';
     elem.style.cursor = 'pointer';
-
-    // Megpróbáljuk az elemről kiolvasni a data-country attribútumot
-    let countryCode = elem.getAttribute('data-country');
-    if (!countryCode && idToCountry && idToCountry.hasOwnProperty(elem.id)) {
-      countryCode = idToCountry[elem.id];
+    
+    // Az eredeti fill szín kinyerése:
+    let originalFill = elem.getAttribute('fill');
+    if (!originalFill) {
+      originalFill = window.getComputedStyle(elem).fill;
     }
-
-    if (countryCode) {
-      // Az eredeti fill szín lekérése:
-      let originalFill = elem.getAttribute('fill');
-      if (!originalFill) {
-        // Ha nincs inline fill attribútum, lekérjük a számított értéket
-        originalFill = window.getComputedStyle(elem).fill;
-      }
-      // Ezt eltároljuk az elem dataset-jében
-      elem.dataset.originalFill = originalFill;
-
-      // mouseenter: módosítjuk a fill színt sárgára
-      elem.addEventListener('mouseenter', () => {
-        elem.setAttribute('fill', '#ffeb3b'); // világos sárga
-      });
-
-      // mouseleave: visszaállítjuk az eredeti színt
-      elem.addEventListener('mouseleave', () => {
-        elem.setAttribute('fill', elem.dataset.originalFill);
-      });
-
-      // Kattintás esemény
-      elem.addEventListener('click', () => {
-        showCountryInfo(countryCode);
-      });
-    }
+    elem.dataset.originalFill = originalFill;
+    
+    // Hover események: 
+    elem.addEventListener('mouseenter', () => {
+      // A style.fill tulajdonság használata biztosítja, hogy az inline stílus felülírja a korábbi beállításokat
+      elem.style.fill = '#ffeb3b'; // világos sárga
+    });
+    
+    elem.addEventListener('mouseleave', () => {
+      elem.style.fill = elem.dataset.originalFill;
+    });
+    
+    // Kattintás: információs kártya megjelenítése
+    elem.addEventListener('click', () => {
+      showCountryInfo(countryCode);
+    });
   });
 });
