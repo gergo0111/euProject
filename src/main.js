@@ -1,113 +1,207 @@
-// Ország adatok – a kulcsok nagybetűs formában szerepelnek.
-// Ezeket módosíthatod, vagy bővítheted további információkkal.
 const countryData = {
   AT: {
     name: 'Ausztria',
-    info: 'Ausztria EU tag, fővárosa Bécs.'
+    info: 'Ausztria 1995-ben csatlakozott az EU-hoz. Bécs fontos diplomáciai központ, és az ország aktív szereplő az uniós döntéshozatalban.',
+    accessionYear: 1995,
+    accessionDisplay: '1995'
   },
   BE: {
     name: 'Belgium',
-    info: 'Belgium EU tag, fővárosa Brüsszel.'
+    info: 'Belgium az EU egyik alapító tagja, 1958-ban csatlakozott. Brüsszel az Európai Bizottság és az Európai Parlament központja.',
+    accessionYear: 1958,
+    accessionDisplay: '1958'
   },
   BG: {
     name: 'Bulgária',
-    info: 'Bulgária EU tag, fővárosa Szófia.'
+    info: 'Bulgária 2007-ben csatlakozott az EU-hoz. Az ország fejlődését uniós források támogatják.',
+    accessionYear: 2007,
+    accessionDisplay: '2007'
   },
   HR: {
     name: 'Horvátország',
-    info: 'Horvátország EU tag, fővárosa Zágráb.'
+    info: 'Horvátország 2013-ban vált az EU tagjává, és dinamikusan fejlődő turisztikai, valamint gazdasági központ.',
+    accessionYear: 2013,
+    accessionDisplay: '2013'
   },
   CY: {
     name: 'Ciprus',
-    info: 'Ciprus EU tag, fővárosa Nicosia.'
+    info: 'Ciprus stratégiai elhelyezkedése és kulturális öröksége miatt fontos uniós szereplő, bár kihívásokkal küzd a földrajzi elkülönültség miatt.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   CZ: {
     name: 'Csehország',
-    info: 'Csehország EU tag, fővárosa Prága.'
+    info: 'Csehország 2004 óta tagja az EU-nak, Prága egyre jelentősebb gazdasági és kulturális központ.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   DK: {
     name: 'Dánia',
-    info: 'Dánia EU tag, fővárosa Koppenhága.'
+    info: 'Dánia 1973-ban csatlakozott az EU-hoz, magas életminőségével és innovációs képességével kiemelkedő uniós partner.',
+    accessionYear: 1973,
+    accessionDisplay: '1973'
   },
   EE: {
     name: 'Észtország',
-    info: 'Észtország EU tag, fővárosa Tallinn.'
+    info: 'Észtország 2004-ben csatlakozott, és vezető szerepet tölt be a digitális innovációban.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   FI: {
     name: 'Finnország',
-    info: 'Finnország EU tag, fővárosa Helsinki.'
+    info: 'Finnország 1995-ben csatlakozott az EU-hoz, fejlett oktatási és innovációs rendszerével meghatározó szereplő.',
+    accessionYear: 1995,
+    accessionDisplay: '1995'
   },
   FR: {
     name: 'Franciaország',
-    info: 'Franciaország EU tag, fővárosa Párizs.'
+    info: 'Franciaország az EU egyik alapító tagja, Párizs globális kulturális és gazdasági központként játszik meghatározó szerepet az uniós politikában.',
+    accessionYear: 1958,
+    accessionDisplay: '1958'
   },
   DE: {
     name: 'Németország',
-    info: 'Németország EU tag, fővárosa Berlin.'
+    info: 'Németország az EU motorja, jelentős gazdasági erejével és politikai befolyásával irányt mutat az uniós döntéshozatalban.',
+    accessionYear: 1958,
+    accessionDisplay: '1958'
   },
   GR: {
     name: 'Görögország',
-    info: 'Görögország EU tag, fővárosa Athén.'
+    info: 'Görögország 1981 óta tagja az EU-nak, gazdag történelmi öröksége miatt meghatározó a mediterrán térség integrációjában.',
+    accessionYear: 1981,
+    accessionDisplay: '1981'
   },
   HU: {
     name: 'Magyarország',
-    info: 'Magyarország EU tag, fővárosa Budapest.'
+    info: 'Magyarország 2004-ben csatlakozott az EU-hoz, Budapest jelentős kulturális és gazdasági központként szerepel az uniós integrációban.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   IE: {
     name: 'Írország',
-    info: 'Írország EU tag, fővárosa Dublin.'
+    info: 'Írország 1973-ban csatlakozott, gazdasági növekedése és innovációja révén fontos uniós partner.',
+    accessionYear: 1973,
+    accessionDisplay: '1973'
   },
   IT: {
     name: 'Olaszország',
-    info: 'Olaszország EU tag, fővárosa Róma.'
+    info: 'Olaszország az EU egyik alapító tagja, Róma és Milánó kulturális, valamint gazdasági központokkal.',
+    accessionYear: 1958,
+    accessionDisplay: '1958'
   },
   LV: {
     name: 'Lettország',
-    info: 'Lettország EU tag, fővárosa Riga.'
+    info: 'Lettország 2004-ben csatlakozott, fővárosa Riga gyorsan fejlődő központként ismert.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   LT: {
     name: 'Litvánia',
-    info: 'Litvánia EU tag, fővárosa Vilnius.'
+    info: 'Litvánia 2004-ben vált az EU tagjává, Vilnius modern infrastruktúrája révén egyre meghatározóbbá válik.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   LU: {
     name: 'Luxemburg',
-    info: 'Luxemburg EU tag, fővárosa Luxemburg.'
+    info: 'Luxemburg az EU egyik alapító tagja, kis mérete ellenére fontos pénzügyi és politikai szereplő.',
+    accessionYear: 1958,
+    accessionDisplay: '1958'
   },
   MT: {
     name: 'Málta',
-    info: 'Málta EU tag, fővárosa Valletta.'
+    info: 'Málta 2004-ben csatlakozott, stratégiai elhelyezkedésével a mediterrán térségben meghatározó uniós szereplő.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   NL: {
     name: 'Hollandia',
-    info: 'Hollandia EU tag, fővárosa Amszterdam.'
+    info: 'Hollandia az EU alapító tagja, Amszterdam globális pénzügyi és kulturális központként ismert.',
+    accessionYear: 1958,
+    accessionDisplay: '1958'
   },
   PL: {
     name: 'Lengyelország',
-    info: 'Lengyelország EU tag, fővárosa Varsó.'
+    info: 'Lengyelország 2004-ben csatlakozott, gyors gazdasági növekedésével és regionális vezető szerepével kiemelkedik.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   PT: {
     name: 'Portugália',
-    info: 'Portugália EU tag, fővárosa Lisszabon.'
+    info: 'Portugália 1986 óta tagja az EU-nak, Lisszabon és Porto meghatározó kulturális és gazdasági központok.',
+    accessionYear: 1986,
+    accessionDisplay: '1986'
   },
   RO: {
     name: 'Románia',
-    info: 'Románia EU tag, fővárosa Bukarest.'
+    info: 'Románia 2007-ben csatlakozott az EU-hoz. Az ország átalakuló gazdasága és kulturális öröksége egyre fontosabbá válik az uniós integrációban.',
+    accessionYear: 2007,
+    accessionDisplay: '2007'
   },
   SK: {
     name: 'Szlovákia',
-    info: 'Szlovákia EU tag, fővárosa Bratislava.'
+    info: 'Szlovákia 2004-ben csatlakozott, fővárosa, Bratislava, gyorsan fejlődő központként ismert.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   SI: {
     name: 'Szlovénia',
-    info: 'Szlovénia EU tag, fővárosa Ljubljana.'
+    info: 'Szlovénia 2004-ben vált az EU tagjává, Ljubljana modern infrastruktúrája mellett fontos uniós partner.',
+    accessionYear: 2004,
+    accessionDisplay: '2004'
   },
   ES: {
     name: 'Spanyolország',
-    info: 'Spanyolország EU tag, fővárosa Madrid.'
+    info: 'Spanyolország 1986 óta tagja az EU-nak, Madrid és Barcelona jelentős kulturális és gazdasági központok.',
+    accessionYear: 1986,
+    accessionDisplay: '1986'
   },
   SE: {
     name: 'Svédország',
-    info: 'Svédország EU tag, fővárosa Stockholm.'
+    info: 'Svédország 1995-ben csatlakozott, Stockholm innovatív technológiai és pénzügyi központként ismert.',
+    accessionYear: 1995,
+    accessionDisplay: '1995'
+  },
+  AL: {
+    name: 'Albánia',
+    info: 'Albánia hivatalos EU-csatlakozási tárgyaló jelölt, aktív reformok révén igyekszik teljesíteni az uniós normákat.',
+    accessionYear: 3000,
+    accessionDisplay: 'Candidate'
+  },
+  MK: {
+    name: 'Észak‑Macedónia',
+    info: 'Észak‑Macedónia hivatalos EU-csatlakozási tárgyaló jelölt, elkötelezett az uniós értékek mellett és folyamatosan reformokat hajt végre.',
+    accessionYear: 3000,
+    accessionDisplay: 'Candidate'
+  },
+  ME: {
+    name: 'Montenegró',
+    info: 'Montenegró hivatalos EU-csatlakozási tárgyaló jelölt, dinamikus gazdasággal és strukturális reformokkal rendelkezik.',
+    accessionYear: 3000,
+    accessionDisplay: 'Candidate'
+  },
+  RS: {
+    name: 'Szerbia',
+    info: 'Szerbia hivatalos EU-csatlakozási tárgyaló jelölt, aktívan dolgozik a jogállamiság és a gazdasági reformok terén.',
+    accessionYear: 3000,
+    accessionDisplay: 'Candidate'
+  },
+  BA: {
+    name: 'Bosznia‑Hercegovina',
+    info: 'Bosznia‑Hercegovina jelentkezett az EU-tagságra, de még nem kapott hivatalos candidate státuszt. További reformokra és intézményi fejlesztésekre vár.',
+    accessionYear: 3001,
+    accessionDisplay: 'Applied'
+  },
+  KO: {
+    name: 'Kosovo',
+    info: 'Kosovo jelentkezett az EU-tagságra, és jelenleg az uniós csatlakozási folyamat előkészítése zajlik, bár több politikai és jogi kérdés még rendezésre vár.',
+    accessionYear: 3001,
+    accessionDisplay: 'Applied'
+  },
+  TR: {
+    name: 'Törökország',
+    info: 'Törökország hosszú ideje hivatalos EU-csatlakozási tárgyaló jelölt, de a tárgyalások politikai és gazdasági nézeteltérések miatt gyakorlatilag fagyasztva lettek.',
+    accessionYear: 3002,
+    accessionDisplay: 'Frozen'
   }
 };
 
@@ -116,79 +210,122 @@ const countryNameEl = document.getElementById('country-name');
 const countryInfoEl = document.getElementById('country-info');
 const closeCardBtn = document.getElementById('close-card');
 const svgObject = document.getElementById('europe-svg');
-
-// Az információs kártya bezárása
-closeCardBtn.addEventListener('click', () => {
-  infoCard.style.display = 'none';
-});
+const tableBody = document.querySelector('#country-table tbody');
+const countryModalEl = document.getElementById('countryModal');
+const countryModal = new bootstrap.Modal(countryModalEl);
 
 function showCountryInfo(countryCode) {
   const data = countryData[countryCode];
   if (data) {
-    countryNameEl.textContent = data.name;
-    countryInfoEl.textContent = data.info;
+    document.getElementById('countryModalLabel').textContent = data.name;
+    document.getElementById('countryModalBody').textContent = data.info;
   } else {
-    countryNameEl.textContent = 'Nincs információ';
-    countryInfoEl.textContent = 'Ez az ország nem tagja az Európai Uniónak.';
+    document.getElementById('countryModalLabel').textContent = 'Nincs információ';
+    document.getElementById('countryModalBody').textContent = 'Nincs elérhető adat az adott országról.';
   }
-  infoCard.style.display = 'block';
+  countryModal.show();
 }
 
-// Az SVG betöltése után dolgozunk vele
 svgObject.addEventListener('load', () => {
   const svgDoc = svgObject.contentDocument;
   if (!svgDoc) {
     console.error('Nem sikerült betölteni az SVG dokumentumot.');
     return;
   }
-  
-  // Lekérjük az összes olyan elemet, amelyek rendelkeznek id attribútummal.
   const interactiveElements = svgDoc.querySelectorAll('[id]');
-  
   interactiveElements.forEach((elem) => {
-    // Az elem id-jét lekérjük, majd nagybetűssé alakítjuk.
     let countryCode = elem.getAttribute('id').trim().toUpperCase();
-    
-    // Csak azokat az elemeket dolgozzuk fel, amelyekhez van adat a countryData objektumban.
-    if (!countryData.hasOwnProperty(countryCode)) {
-      return;
-    }
-    
-    // Biztosítjuk, hogy az elem fogadja a pointer eseményeket, és a kurzor mutató legyen.
+    if (!countryData.hasOwnProperty(countryCode)) return;
     elem.style.pointerEvents = 'all';
     elem.style.cursor = 'pointer';
-    
-    // Megállapítjuk, hogy az elem egyedi <path> vagy egy <g> csoport, és ennek megfelelően gyűjtjük a releváns <path> elemeket.
     let childPaths = [];
     if (elem.tagName.toLowerCase() === 'g') {
       childPaths = elem.querySelectorAll('path');
     } else if (elem.tagName.toLowerCase() === 'path') {
       childPaths = [elem];
     }
-    
-    // Minden érintett <path> esetén elmentjük az eredeti fill színt, hogy később vissza lehessen állítani.
     childPaths.forEach(child => {
       let orig = child.getAttribute('fill') || window.getComputedStyle(child).fill;
       child.dataset.originalFill = orig;
     });
-    
-    // Hover események: amikor az egér az elem fölé kerül, a benne lévő <path> elemek fill színét világos sárgára állítjuk.
     elem.addEventListener('mouseenter', () => {
       childPaths.forEach(child => {
-        child.style.fill = '#ffeb3b'; // világos sárga
+        child.style.fill = '#ffeb3b';
       });
     });
-    
-    // Amikor az egér elhagyja az elemet, visszaállítjuk az eredeti színeket.
     elem.addEventListener('mouseleave', () => {
       childPaths.forEach(child => {
         child.style.fill = child.dataset.originalFill;
       });
     });
-    
-    // Kattintás esemény: megjelenítjük az adott ország információit.
     elem.addEventListener('click', () => {
       showCountryInfo(countryCode);
     });
   });
+});
+
+function getCountriesArray() {
+  return Object.keys(countryData)
+    .filter(code => countryData[code].hasOwnProperty('accessionYear'))
+    .map(code => ({ code, ...countryData[code] }));
+}
+
+function renderTable(countries) {
+  tableBody.innerHTML = '';
+  countries.forEach(country => {
+    const tr = document.createElement('tr');
+    const tdName = document.createElement('td');
+    tdName.textContent = country.name;
+    const tdAccession = document.createElement('td');
+    tdAccession.textContent = country.accessionDisplay;
+    tr.appendChild(tdName);
+    tr.appendChild(tdAccession);
+    tableBody.appendChild(tr);
+  });
+}
+
+function sortByTime(countries) {
+  return countries.sort((a, b) => a.accessionYear - b.accessionYear);
+}
+
+function sortByAlpha(countries) {
+  return countries.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+document.getElementById('sort-time').addEventListener('click', () => {
+  const countries = getCountriesArray();
+  renderTable(sortByTime(countries));
+});
+
+document.getElementById('sort-alpha').addEventListener('click', () => {
+  const countries = getCountriesArray();
+  renderTable(sortByAlpha(countries));
+});
+
+renderTable(sortByTime(getCountriesArray()));
+
+const svgContainer = document.getElementById('svg-container');
+const zoomBtn = document.getElementById('zoom-btn');
+const closeFullscreenBtn = document.getElementById('close-fullscreen-btn');
+
+zoomBtn.addEventListener('click', () => {
+  if (svgContainer.requestFullscreen) {
+    svgContainer.requestFullscreen();
+  }
+});
+
+closeFullscreenBtn.addEventListener('click', () => {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  }
+});
+
+document.addEventListener('fullscreenchange', () => {
+  if (document.fullscreenElement) {
+    closeFullscreenBtn.style.display = 'block';
+    zoomBtn.style.display = 'none';
+  } else {
+    closeFullscreenBtn.style.display = 'none';
+    zoomBtn.style.display = 'block';
+  }
 });
