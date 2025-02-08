@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EU Térkép – SVG megoldás</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container my-4">
+      <h1 class="mb-4">Európai Unió országai</h1>
+      <div class="row">
+        <!-- Térkép: az SVG fájl a public mappából -->
+        <div class="col-md-8">
+          <object
+            id="europe-svg"
+            type="image/svg+xml"
+            data="/BlankMap-Europe.svg"
+            style="width: 100%; height: auto;"
+          >
+            A böngésződ nem támogatja az SVG fájlokat.
+          </object>
+        </div>
+        <!-- Információs kártya -->
+        <div class="col-md-4">
+          <div id="info-card" class="card" style="display: none;">
+            <div class="card-body">
+              <h5 class="card-title" id="country-name"></h5>
+              <p class="card-text" id="country-info"></p>
+              <button id="close-card" class="btn btn-secondary">Bezár</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vite modul betöltése -->
+    <script type="module" src="/src/main.js"></script>
+    <!-- Bootstrap JS Bundle (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
