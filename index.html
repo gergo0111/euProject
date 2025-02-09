@@ -7,23 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <style>
-      body {
-        background-color: #e9ecef;
-      }
+      body { background-color: #e9ecef; }
       .svg-container {
         position: relative;
         border: 1px solid #dee2e6;
         background-color: #fff;
         padding: 10px;
         border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+      }
+      .svg-container object {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
       #svg-container:fullscreen,
       #svg-container:-webkit-full-screen {
         width: 100vw;
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: #343a40;
       }
       #svg-container:fullscreen object,
@@ -31,9 +35,33 @@
         max-width: 90vw;
         max-height: 90vh;
       }
-      #close-fullscreen-btn {
-        display: none;
+      #close-fullscreen-btn { display: none; }
+      .legend {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        width: 250px;
       }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .legend-item:last-child {
+        margin-bottom: 0;
+      }
+      .legend-color {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: 1px solid #000;
+      }
+      .current-members { background-color: #003399; }
+      .negotiating { background-color: #228B22; }
+      .candidates { background-color: #90ee90; }
+      .applicants { background-color: #ffd700; }
+      .frozen { background-color: #ff4500; }
     </style>
   </head>
   <body>
@@ -58,9 +86,7 @@
             <button id="close-fullscreen-btn" class="btn btn-outline-danger position-absolute top-0 end-0 m-2" title="Kilépés a teljes képernyőből">
               <i class="bi bi-fullscreen-exit"></i> Kilépés
             </button>
-            <object id="europe-svg" type="image/svg+xml" data="/BlankMap-Europe.svg" class="img-fluid" style="width: 100%; height: auto;">
-              A böngésződ nem támogatja az SVG fájlokat.
-            </object>
+            <object id="europe-svg" type="image/svg+xml" data="/BlankMap-Europe.svg" class="img-fluid" style="width: 100%; height: auto;"></object>
             <div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
@@ -68,11 +94,34 @@
                     <h5 class="modal-title" id="countryModalLabel">Ország neve</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Bezár"></button>
                   </div>
-                  <div class="modal-body" id="countryModalBody">
-                    Ország információ...
-                  </div>
+                  <div class="modal-body" id="countryModalBody">Ország információ...</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="legend">
+            <h5>Jelmagyarázat</h5>
+            <div class="legend-item">
+              <div class="legend-color current-members"></div>
+              <span>Jelenlegi tagállamok</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color negotiating"></div>
+              <span>Tárgyaló tagjelöltek</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color candidates"></div>
+              <span>Tagjelöltek</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color applicants"></div>
+              <span>Jelentkezők</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color frozen"></div>
+              <span>Befagyasztott tárgyalású tagjelöltek</span>
             </div>
           </div>
         </div>
