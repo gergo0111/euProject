@@ -1,0 +1,55 @@
+body { background-color: #dae4ed; }
+      .svg-container {
+        position: relative;
+        border: 1px solid #dee2e6;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+      }
+      .svg-container object {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      #svg-container:fullscreen,
+      #svg-container:-webkit-full-screen {
+        width: 100vw;
+        height: 100vh;
+        background-color: #343a40;
+      }
+      #svg-container:fullscreen object,
+      #svg-container:-webkit-full-screen object {
+        max-width: 90vw;
+        max-height: 90vh;
+      }
+      #close-fullscreen-btn { display: none; }
+      .legend {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        width: 250px;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .legend-item:last-child {
+        margin-bottom: 0;
+      }
+      .legend-color {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: 1px solid #000;
+      }
+      .current-members { background-color: #003399; }
+      .negotiating { background-color: #228B22; }
+      .candidates { background-color: #90ee90; }
+      .applicants { background-color: #ffd700; }
+      .frozen { background-color: #ff4500; }
